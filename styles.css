@@ -42,8 +42,9 @@ p{margin:0 0 1em}
 .menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:.4rem .8rem;font-family:inherit}
 
 .hero{background:
-  radial-gradient(900px 420px at 85% 0,rgba(3,111,114,.75),transparent 65%),
-  linear-gradient(135deg,#3D4246 0%,#343a3d 55%,#036F72 160%);
+  linear-gradient(90deg,rgba(61,66,70,.96) 0%,rgba(61,66,70,.72) 48%,rgba(61,66,70,.05) 100%),
+  url("assets/hero-skyline.svg?v=1") right bottom/cover no-repeat,
+  #3D4246;
   color:#fff;padding:7rem 0 5rem}
 .hero-inner{max-width:860px}
 .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;font-weight:600;color:var(--accent);margin-bottom:1rem}
@@ -71,6 +72,9 @@ p{margin:0 0 1em}
 
 .split{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;align-items:center}
 .checks{list-style:none;margin:0;padding:1.8rem;background:var(--charcoal-2);border-radius:var(--radius)}
+.hynri-art{display:flex;flex-direction:column;gap:1.2rem}
+.hynri-art img{width:min(300px,70%);height:auto;margin:0 auto;display:block}
+.hynri-art figcaption{text-align:center;color:var(--accent);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
 .checks li{padding:.65rem 0 .65rem 2rem;position:relative;border-bottom:1px solid rgba(255,255,255,.08);color:#e8edf3}
 .checks li:last-child{border:0}
 .checks li::before{content:"\2713";position:absolute;left:0;color:var(--accent);font-weight:700}
