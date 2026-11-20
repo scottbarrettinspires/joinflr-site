@@ -75,7 +75,7 @@ p{margin:0 0 1em}
 .split{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;align-items:center}
 .checks{list-style:none;margin:0;padding:1.8rem;background:var(--charcoal-2);border-radius:var(--radius)}
 .hynri-art{display:flex;flex-direction:column;gap:1.2rem}
-.hynri-art img{width:min(300px,70%);height:auto;margin:0 auto;display:block}
+.hynri-art img{width:100%;max-width:560px;height:auto;margin:0 auto;display:block;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .hynri-art figcaption{text-align:center;color:var(--accent);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
 .checks li{padding:.65rem 0 .65rem 2rem;position:relative;border-bottom:1px solid rgba(255,255,255,.08);color:#e8edf3}
 .checks li:last-child{border:0}
