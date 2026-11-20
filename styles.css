@@ -269,3 +269,27 @@ overflow:hidden;isolation:isolate}
 .pillar-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;border:2px solid rgba(255,255,255,.85)}
 @media(max-width:900px){.culture-grid{grid-template-columns:1fr}.culture-award{min-height:0;aspect-ratio:4/5}}
 .pillar-photos img{height:auto}
+
+/* Audience switch */
+.audience-band{background:#0f2f50;color:#dbe4ee}
+.audience-inner{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;padding:.85rem 0;text-align:center}
+.audience-inner p{margin:0}
+.audience-inner a{color:#8fd6d8;font-weight:600;text-decoration:none}
+.audience-inner a:hover{text-decoration:underline}
+.menu-alt{color:#8fd6d8!important;font-weight:600}
+.inline-link{color:var(--teal);font-weight:600}
+/* New-licensee mentorship */
+.mentor-sec{background:var(--sand)}
+.mentor-sec h2{font-size:clamp(2rem,4vw,3rem)}
+.weeks{list-style:none;margin:2.4rem 0;padding:0;display:grid;grid-template-columns:repeat(8,1fr);gap:.6rem;position:relative}
+.wk{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.35rem;padding-top:.2rem}
+.wk::before{content:"";position:absolute;top:1.65rem;left:-50%;width:100%;height:3px;background:#b9d3d3;z-index:0}
+.wk:first-child::before{display:none}
+.wk span{position:relative;z-index:1;width:3.3rem;height:3.3rem;border-radius:50%;background:#fff;border:3px solid #b9d3d3;color:var(--teal);font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-size:1.5rem;display:grid;place-items:center}
+.wk-on span,.wk:last-child span{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 8px 20px rgba(3,111,114,.35)}
+.wk b{font-size:.85rem;color:var(--charcoal)}
+.wk em{font-style:normal;font-size:.82rem;color:var(--teal);font-weight:600;line-height:1.25}
+.mentor-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.mentor-cols .col{background:#fff;border:1px solid #d6e2e2;border-top:4px solid var(--teal);border-radius:var(--radius);padding:1.5rem}
+.mentor-cta{text-align:center;margin:2rem 0 0}
+@media(max-width:900px){.weeks{grid-template-columns:repeat(4,1fr);row-gap:1.4rem}.wk:nth-child(5)::before{display:none}.mentor-cols{grid-template-columns:1fr}}

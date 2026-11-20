@@ -46,7 +46,7 @@ var CONTACT_EMAIL = "broker@myflroffice.com";
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          source: "joinflr.com",
+          source: form.getAttribute("data-source") || "joinflr.com",
           name: d.name, email: d.email, phone: d.phone,
           type: d.type, brokerage: d.brokerage, message: d.message
         })
@@ -70,7 +70,7 @@ var CONTACT_EMAIL = "broker@myflroffice.com";
       d.message || ""
     ].join("\n");
     window.location.href = "mailto:" + CONTACT_EMAIL +
-      "?subject=" + encodeURIComponent("Interested in joining FLR") +
+      "?subject=" + encodeURIComponent(form.getAttribute("data-subject") || "Interested in joining FLR") +
       "&body=" + encodeURIComponent(body);
     say("Your email app should open with your details ready to send.", "ok");
   });
