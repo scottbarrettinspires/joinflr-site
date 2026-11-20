@@ -204,3 +204,6 @@ overflow:hidden;isolation:isolate}
 .js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.tile{transition:none}}
 @media(max-width:900px){.proof{grid-template-columns:1fr}.bento{grid-template-columns:1fr}.tile-hynri,.tile-share{grid-column:auto}.tile-share{flex-direction:column;align-items:flex-start}.tile-share .tile-link{margin:0}.tile-badge{position:static;display:inline-block;margin-bottom:1rem}}
+.tile-share{grid-column:span 2}
+.tile-share .tile-link{margin:0 0 0 auto}
+@media(max-width:900px){.tile-share{grid-column:auto}}
