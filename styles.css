@@ -207,3 +207,4 @@ overflow:hidden;isolation:isolate}
 .tile-share{grid-column:span 2}
 .tile-share .tile-link{margin:0 0 0 auto}
 @media(max-width:900px){.tile-share{grid-column:auto}}
+.scott-motto{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.9rem;font-weight:700;color:#8fd6d8;margin:.2rem 0 .4rem;line-height:1.1}
