@@ -169,3 +169,6 @@ overflow:hidden;isolation:isolate}
 @media(min-width:901px){.scott-card{flex-direction:row;align-items:flex-end;gap:1.6rem}.scott-photo{width:230px;max-width:none;flex:0 0 230px;align-self:flex-end;margin-bottom:-4.5rem}.scott-text{flex:1}}
 .scott-photo{-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
 @media(min-width:901px){.scott-photo{width:190px;flex-basis:190px;margin-bottom:0;align-self:center}}
+.btn-call{font-size:1.1rem;padding:1rem 1.7rem}
+.scott-note{margin:.8rem 0 1rem;color:#dbe4ee}
+.btn-call{text-align:center;line-height:1.35;border-radius:28px}
