@@ -158,3 +158,14 @@ overflow:hidden;isolation:isolate}
 .hynri-mark{width:220px;height:auto;display:block;margin:0 0 1.4rem}
 .hynri-sec .hynri-art{min-height:300px}
 @media(max-width:900px){.hynri-sec::before{display:none}.hynri-sec .hynri-art{min-height:240px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(22,64,106,.35),rgba(22,64,106,0) 30%,rgba(22,64,106,0) 70%,rgba(22,64,106,.5)),url("assets/hynri-ai.jpg?v=1") 58% 45%/cover no-repeat;box-shadow:0 10px 30px rgba(0,0,0,.35)}}
+
+.scott-card{position:relative;display:flex;flex-direction:column;gap:1.2rem}
+.scott-photo{width:240px;max-width:60%;height:auto;display:block;align-self:flex-start}
+.scott-name{margin:.2rem 0 1rem;line-height:1.4}
+.scott-name strong{color:#fff;font-size:1.1rem}
+.scott-actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.scott-email{margin:.8rem 0 1rem}
+.scott-email a{color:#8fd6d8}
+@media(min-width:901px){.scott-card{flex-direction:row;align-items:flex-end;gap:1.6rem}.scott-photo{width:230px;max-width:none;flex:0 0 230px;align-self:flex-end;margin-bottom:-4.5rem}.scott-text{flex:1}}
+.scott-photo{-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
+@media(min-width:901px){.scott-photo{width:190px;flex-basis:190px;margin-bottom:0;align-self:center}}
