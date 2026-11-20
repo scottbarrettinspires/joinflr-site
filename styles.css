@@ -293,3 +293,10 @@ overflow:hidden;isolation:isolate}
 .mentor-cols .col{background:#fff;border:1px solid #d6e2e2;border-top:4px solid var(--teal);border-radius:var(--radius);padding:1.5rem}
 .mentor-cta{text-align:center;margin:2rem 0 0}
 @media(max-width:900px){.weeks{grid-template-columns:repeat(4,1fr);row-gap:1.4rem}.wk:nth-child(5)::before{display:none}.mentor-cols{grid-template-columns:1fr}}
+
+/* Scott headshot on the pledge card: breaks out above the card */
+.svc-pledge{position:relative;margin-top:8rem;align-items:center}
+.pledge-who{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 0 auto;width:280px;margin-top:-9rem;align-self:flex-end}
+.pledge-who img{width:240px;height:auto;display:block;margin:0 auto .4rem;filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
+.pledge-who span{display:block}
+@media(max-width:760px){.svc-pledge{margin-top:8rem;flex-direction:column;align-items:center;text-align:center}.svc-pledge p{flex:0 0 auto}.pledge-who{order:-1;margin-top:-9rem;width:200px}.pledge-who img{width:180px}}
