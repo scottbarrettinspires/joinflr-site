@@ -136,16 +136,25 @@ details p{margin:.8rem 0 0;color:var(--muted)}
 
 /* Hynri brand section (Hynri colors: #16406A, #4DB3EE, #8DD3FF, #C4CED4, #0077C0) */
 .hynri-sec{background:#16406A;color:#DCE6EE;position:relative;
-background-image:radial-gradient(520px 520px at 80% 30%,rgba(77,179,238,.4),rgba(77,179,238,0) 70%),linear-gradient(rgba(196,206,212,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(196,206,212,.05) 1px,transparent 1px);
-background-size:auto,32px 32px,32px 32px}
+overflow:hidden;isolation:isolate}
+.hynri-sec::before{content:"";position:absolute;left:0;right:0;top:0;height:78%;z-index:-1;background:linear-gradient(90deg,rgba(22,64,106,.98) 0%,rgba(22,64,106,.8) 40%,rgba(22,64,106,0) 75%),linear-gradient(180deg,rgba(22,64,106,0) 70%,#16406A 100%),url("assets/hynri-ai.jpg?v=1") 78% 40%/cover no-repeat}
+.hynri-sec .hynri-art{justify-content:flex-start;min-height:340px}
+.hynri-sec .checks{display:grid;grid-template-columns:repeat(3,1fr);gap:0 2rem;margin-top:2.2rem}
+.hynri-sec .checks li:nth-last-child(-n+3){border:0}
+@media(max-width:900px){.hynri-sec .checks{grid-template-columns:1fr}.hynri-sec .checks li:nth-last-child(-n+3){border-bottom:1px solid rgba(196,206,212,.2)}.hynri-sec .checks li:last-child{border:0}}
+.hynri-sec::after{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(196,206,212,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(196,206,212,.05) 1px,transparent 1px);background-size:32px 32px}
 .hynri-sec h2{color:#fff}
 .hynri-sec .eyebrow{color:#8DD3FF}
 .hynri-sec .checks li{color:#DCE6EE}
 .hynri-sec .checks li::before{color:#4DB3EE;border-color:#4DB3EE}
 .btn-hynri{background:#0077C0;color:#fff;border:2px solid #4DB3EE}
 .btn-hynri:hover{background:#005B94}
-.hynri-logo{text-align:center;padding:1.6rem 1rem;border:1px solid rgba(150,215,255,.45);background:rgba(255,255,255,.09);border-radius:var(--radius)}
+.hynri-logo{text-align:center;padding:0}
 .hynri-logo img{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}
 .hynri-logo figcaption{margin-top:.8rem;color:#8DD3FF;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase}
 .hynri-sec .checks{background:rgba(255,255,255,.09);border:1px solid rgba(150,215,255,.45)}
 .hynri-sec .checks li{border-bottom-color:rgba(196,206,212,.2)}
+.hynri-sec .checks{background:rgba(14,44,76,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.hynri-mark{width:220px;height:auto;display:block;margin:0 0 1.4rem}
+.hynri-sec .hynri-art{min-height:300px}
+@media(max-width:900px){.hynri-sec::before{display:none}.hynri-sec .hynri-art{min-height:240px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(22,64,106,.35),rgba(22,64,106,0) 30%,rgba(22,64,106,0) 70%,rgba(22,64,106,.5)),url("assets/hynri-ai.jpg?v=1") 58% 45%/cover no-repeat;box-shadow:0 10px 30px rgba(0,0,0,.35)}}
