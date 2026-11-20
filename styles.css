@@ -75,8 +75,6 @@ p{margin:0 0 1em}
 .split{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;align-items:center}
 .checks{list-style:none;margin:0;padding:1.8rem;background:var(--charcoal-2);border-radius:var(--radius)}
 .hynri-art{display:flex;flex-direction:column;gap:1.2rem}
-.hynri-art img{width:100%;max-width:560px;height:auto;margin:0 auto;display:block;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.35)}
-.hynri-art figcaption{text-align:center;color:var(--accent);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
 .checks li{padding:.65rem 0 .65rem 2rem;position:relative;border-bottom:1px solid rgba(255,255,255,.08);color:#e8edf3}
 .checks li:last-child{border:0}
 .checks li::before{content:"\2713";position:absolute;left:0;color:var(--accent);font-weight:700}
@@ -135,3 +133,19 @@ details p{margin:.8rem 0 0;color:var(--muted)}
   .hero-photo{position:relative;width:100%;height:300px;top:auto;right:auto;bottom:auto;background-position:35% 30%}
   .hero-photo::before{background:linear-gradient(180deg,#3D4246 0%,rgba(61,66,70,0) 40%)}
 }
+
+/* Hynri brand section (Hynri colors: #16406A, #4DB3EE, #8DD3FF, #C4CED4, #0077C0) */
+.hynri-sec{background:#16406A;color:#DCE6EE;position:relative;
+background-image:radial-gradient(520px 520px at 80% 30%,rgba(77,179,238,.4),rgba(77,179,238,0) 70%),linear-gradient(rgba(196,206,212,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(196,206,212,.05) 1px,transparent 1px);
+background-size:auto,32px 32px,32px 32px}
+.hynri-sec h2{color:#fff}
+.hynri-sec .eyebrow{color:#8DD3FF}
+.hynri-sec .checks li{color:#DCE6EE}
+.hynri-sec .checks li::before{color:#4DB3EE;border-color:#4DB3EE}
+.btn-hynri{background:#0077C0;color:#fff;border:2px solid #4DB3EE}
+.btn-hynri:hover{background:#005B94}
+.hynri-logo{text-align:center;padding:1.6rem 1rem;border:1px solid rgba(150,215,255,.45);background:rgba(255,255,255,.09);border-radius:var(--radius)}
+.hynri-logo img{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}
+.hynri-logo figcaption{margin-top:.8rem;color:#8DD3FF;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase}
+.hynri-sec .checks{background:rgba(255,255,255,.09);border:1px solid rgba(150,215,255,.45)}
+.hynri-sec .checks li{border-bottom-color:rgba(196,206,212,.2)}
