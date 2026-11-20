@@ -75,3 +75,6 @@ var CONTACT_EMAIL = "broker@myflroffice.com";
     say("Your email app should open with your details ready to send.", "ok");
   });
 })();
+
+(function(){try{document.documentElement.classList.add("js");var els=document.querySelectorAll(".reveal");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return;}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.15});els.forEach(function(e,i){e.style.transitionDelay=(i%3)*90+"ms";io.observe(e)});}catch(e){document.querySelectorAll(".reveal").forEach(function(x){x.classList.add("in")})}})();
