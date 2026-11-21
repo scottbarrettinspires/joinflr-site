@@ -470,3 +470,14 @@ overflow:hidden;isolation:isolate}
 #why.why-long .why-text{max-width:620px;margin-left:auto}
 #why.why-long .proof{margin-top:2.2rem}
 @media(max-width:900px){#why.why-long::before{height:auto;bottom:0;width:auto}#why.why-long .why-head{min-height:0;display:block}}
+/* Mobile: phone mockup right under the LeadStream headline */
+@media(max-width:900px){
+  .ls-grid{display:flex;flex-direction:column;gap:0}
+  .ls-copy{display:contents}
+  .ls-copy>.ls-wordmark{order:1}
+  .ls-copy>.eyebrow{order:2}
+  .ls-copy>h2{order:3}
+  .ls-art{order:4;margin:1.4rem 0 1.8rem}
+  .ls-copy>p:not(.ls-wordmark):not(.eyebrow){order:5}
+  .ls-copy>.btn{order:6;align-self:flex-start;margin-top:.4rem}
+}
