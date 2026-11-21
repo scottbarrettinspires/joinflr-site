@@ -481,3 +481,6 @@ overflow:hidden;isolation:isolate}
   .ls-copy>p:not(.ls-wordmark):not(.eyebrow){order:5}
   .ls-copy>.btn{order:6;align-self:flex-start;margin-top:.4rem}
 }
+
+.cols.cols-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.cols.cols-2{grid-template-columns:1fr}}
