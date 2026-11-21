@@ -359,10 +359,10 @@ overflow:hidden;isolation:isolate}
 @media(max-width:900px){.why-head{grid-template-columns:1fr;gap:1.6rem}.why-photo{max-width:420px}}
 /* Why section (main page): photo as background, header only */
 #why.why-sec{min-height:500px;display:grid;align-items:center;isolation:isolate}
-#why.why-sec::before{content:"";position:absolute;top:0;bottom:0;right:0;aspect-ratio:700/600;z-index:-1;background:url("assets/why-agent.jpg") center/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 48%);mask-image:linear-gradient(90deg,transparent 0%,#000 48%)}
+#why.why-sec::before{content:"";position:absolute;top:0;bottom:0;left:0;aspect-ratio:700/600;z-index:-1;background:url("assets/why-agent.jpg") center/cover no-repeat;-webkit-mask-image:linear-gradient(270deg,transparent 0%,#000 48%);mask-image:linear-gradient(270deg,transparent 0%,#000 48%)}
 #why .why-head{display:block}
-#why .why-text{max-width:620px}
-@media(max-width:900px){#why.why-sec{min-height:0;display:block}#why.why-sec::before{left:0;aspect-ratio:auto;background:linear-gradient(180deg,rgba(43,49,53,.9) 0%,rgba(43,49,53,.8) 100%),url("assets/why-agent.jpg") center top/cover no-repeat;-webkit-mask-image:none;mask-image:none}}
+#why .why-text{max-width:620px;margin-left:auto}
+@media(max-width:900px){#why.why-sec{min-height:0;display:block}#why.why-sec::before{left:0;right:0;aspect-ratio:auto;background:linear-gradient(180deg,rgba(43,49,53,.9) 0%,rgba(43,49,53,.8) 100%),url("assets/why-agent.jpg") center top/cover no-repeat;-webkit-mask-image:none;mask-image:none}}
 /* Technology section: photo background */
 .tech-sec{position:relative;isolation:isolate;background:#f4f8f8}
 .tech-sec::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(244,248,248,.9) 0%,rgba(244,248,248,.78) 40%,rgba(244,248,248,.88) 100%),url("assets/tech-bg.jpg") center/cover no-repeat}
