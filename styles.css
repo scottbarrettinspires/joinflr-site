@@ -367,3 +367,12 @@ overflow:hidden;isolation:isolate}
 .tech-sec{position:relative;isolation:isolate;background:#f4f8f8}
 .tech-sec::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(244,248,248,.9) 0%,rgba(244,248,248,.78) 40%,rgba(244,248,248,.88) 100%),url("assets/tech-bg.jpg") center/cover no-repeat}
 .tech-sec .stage{background:rgba(255,255,255,.95)}
+/* Laptop mockup (transparent background) */
+.tech-head{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.laptop{margin:0;filter:drop-shadow(0 24px 30px rgba(14,34,56,.35))}
+.laptop-lid{position:relative;background:#14181b;border-radius:16px 16px 6px 6px;padding:12px 12px 14px;border:2px solid #3a444a}
+.laptop-cam{position:absolute;top:5px;left:50%;width:5px;height:5px;border-radius:50%;background:#35424a;transform:translateX(-50%)}
+.laptop-lid img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:4px;background:#fff}
+.laptop-base{position:relative;height:16px;margin:0 -4%;background:linear-gradient(180deg,#d6dadd,#a9afb4);border-radius:0 0 18px 18px}
+.laptop-base::before{content:"";position:absolute;left:50%;top:0;width:18%;height:6px;transform:translateX(-50%);background:#8d949a;border-radius:0 0 8px 8px}
+@media(max-width:900px){.tech-head{grid-template-columns:1fr}.laptop{max-width:520px;margin:0 auto}}
