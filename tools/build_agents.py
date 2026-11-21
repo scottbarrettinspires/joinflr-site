@@ -47,7 +47,7 @@ def build(a):
     h = re.sub(r'\s*<a href="[^"]*future-agents/">Studying for your license\?</a>', "", h, count=1)
     h = swap(h, '<a href="#contact">Start a conversation</a>\n    </div>\n  </div>\n  <div class="wrap legal">', '<a href="#contact">Request information</a>\n    </div>\n  </div>\n  <div class="wrap legal">')
     # ---- hero ----
-    h = swap(h, 'For experienced agents &middot; Serving Florida since 1999', f'A personal introduction from {esc(name)}')
+    h = swap(h, 'For experienced agents &middot; Serving Florida since 1999', 'Serving Florida since 1999')
     h = swap(h, '<a class="btn btn-teal" href="#contact">Start a confidential conversation</a>\n      <a class="btn btn-ghost" href="#why">See what you get</a>',
              f'<a class="btn btn-teal" href="#contact">Request information</a>\n      <a class="btn btn-ghost" href="#intro">Meet {esc(first)}</a>')
     h = swap(h, '<li>Every conversation stays confidential</li>', f'<li>Introduced by {esc(name)}</li>')
@@ -55,23 +55,31 @@ def build(a):
     initials = "".join(w[0] for w in name.split()[:2]).upper()
     photo = a.get("photo") or ""
     if photo and os.path.exists(f"assets/agents/{photo}"):
-        pic = f'<img class="ai-photo" src="../../assets/agents/{esc(photo)}" alt="{esc(name)}" width="220" height="220" loading="lazy">'
+        pic = f'<img class="ai-photo" src="../../assets/agents/{esc(photo)}" alt="{esc(name)}" width="260" height="260" loading="lazy">'
     else:
         pic = f'<span class="ai-photo ai-initials" aria-hidden="true">{esc(initials)}</span>'
-    note = a.get("note") or (f"I am with Florida Luxury Realty, and I would like to introduce you to the brokerage where I build my business. "
-                             f"Take a look around. If it sounds worth a conversation, request information below and we will get you the full picture.")
+    note = a.get("note") or ("Florida Luxury Realty is where I build my business, and I would like to show you how it could help yours flourish. "
+                             "Take a look at what FLR offers below. If it sounds worth a conversation, request information and we will get you the full picture.")
     btns = '<a class="btn btn-teal" href="#contact">Request information</a>'
     if a.get("phone"):
         tel = re.sub(r"\D", "", a["phone"]); btns += f' <a class="btn btn-ghost-dark" href="tel:+1{tel[-10:]}">Call {esc(first)}</a>'
-    intro = f'''<section class="section ai-sec" id="intro">
+    role = esc(a["role"] + ", Florida Luxury Realty") if a.get("role") else "Florida Luxury Realty agent"
+    intro = f'''<section class="ai-sec" id="intro">
   <div class="wrap">
     <div class="ai-card reveal">
       {pic}
       <div class="ai-text">
-        <p class="eyebrow dark">A personal introduction</p>
-        <h2>{esc(name)} invites you to take a look at FLR</h2>
-        <p class="ai-role">{esc(a["role"] + ", Florida Luxury Realty") if a.get("role") else "Florida Luxury Realty agent"}</p>
+        <p class="eyebrow dark">A personal introduction from</p>
+        <h2 class="ai-name">{esc(name)}</h2>
+        <p class="ai-role">{role}</p>
+        <h3>Why my brokerage is Florida Luxury Realty</h3>
         <p>{esc(note)}</p>
+        <p class="ai-help-h">How it could help your business flourish</p>
+        <ul class="ai-help">
+          <li><a href="#hynri"><b>An AI Agent Partner</b><span>handles the busywork</span></a></li>
+          <li><a href="#grow"><b>Weekly training</b><span>in person and online</span></a></li>
+          <li><a href="#share"><b>Revenue share</b><span>income beyond your own sales</span></a></li>
+        </ul>
         <div class="ai-actions">{btns}</div>
       </div>
     </div>
@@ -79,7 +87,7 @@ def build(a):
 </section>
 
 '''
-    h = swap(h, '<section class="section why-sec" id="why">', intro + '<section class="section why-sec" id="why">')
+    h = swap(h, '<section class="hero">', intro + '<section class="hero">')
     # ---- revenue share call to action (not a referral prompt for an outside agent) ----
     s, e = region(h, '<div class="rs-cta reveal">', 'Refer an agent</a>\n    </div>')
     h = h[:s] + f'''<div class="rs-cta reveal">

@@ -632,9 +632,9 @@ overflow:hidden;isolation:isolate}
 .ls-logo{display:block;width:min(100%,380px);height:auto;margin:0 0 1.2rem}
 @media(max-width:520px){.ls-logo{width:min(100%,300px)}}
 /* personal agent pages */
-.ai-sec{background:#fff;padding:3.2rem 0}
+.ai-sec{background:#fff;padding:2.4rem 0 2.6rem;border-bottom:1px solid #e1e9e9}
 .ai-card{display:grid;grid-template-columns:auto 1fr;gap:2.4rem;align-items:center;background:var(--sand);border:1px solid #d6e2e2;border-radius:var(--radius);padding:2rem 2.2rem;box-shadow:0 10px 26px rgba(14,34,56,.07)}
-.ai-photo{width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 12px 28px rgba(14,34,56,.2)}
+.ai-photo{width:230px;height:230px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 12px 28px rgba(14,34,56,.2)}
 .ai-initials{display:grid;place-items:center;background:linear-gradient(160deg,#036F72,#025557);color:#fff;font-family:"Cormorant Garamond",Georgia,serif;font-size:3.6rem;font-weight:700}
 .ai-text h2{margin:.2rem 0 .3rem;font-size:clamp(1.7rem,3vw,2.4rem);color:#2b3135}
 .ai-role{margin:0 0 .8rem;color:#036F72;font-weight:600}
@@ -644,3 +644,12 @@ overflow:hidden;isolation:isolate}
 .btn-ghost-dark:hover{background:#036F72;color:#fff}
 .ref-note{margin:.2rem 0 .6rem;font-size:.85rem}
 @media(max-width:700px){.ai-card{grid-template-columns:1fr;text-align:left;padding:1.4rem;gap:1.2rem}.ai-photo{width:120px;height:120px}.ai-initials{font-size:2.4rem}}
+.ai-name{margin:.1rem 0 .1rem;font-size:clamp(2rem,4vw,3rem);color:#2b3135}
+.ai-text h3{margin:.9rem 0 .35rem;font-size:1.35rem;color:#036F72}
+.ai-help-h{margin:1rem 0 .5rem;font-weight:700;color:#2b3135}
+.ai-help{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.ai-help a{display:block;height:100%;background:#fff;border:1px solid #d6e2e2;border-left:4px solid #036F72;border-radius:12px;padding:.7rem .9rem;text-decoration:none;color:#3D4246}
+.ai-help a:hover{border-color:#036F72;box-shadow:0 6px 16px rgba(14,34,56,.1)}
+.ai-help b{display:block;color:#2b3135}
+.ai-help span{font-size:.88rem;color:#5b6770}
+@media(max-width:900px){.ai-help{grid-template-columns:1fr}.ai-photo{width:150px;height:150px}.ai-card{grid-template-columns:1fr}}
