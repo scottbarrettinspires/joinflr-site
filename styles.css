@@ -303,3 +303,33 @@ overflow:hidden;isolation:isolate}
 /* Pledge quote: elegant italic serif */
 .svc-pledge p{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.75rem;font-weight:600;line-height:1.3;letter-spacing:0}
 @media(max-width:760px){.svc-pledge p{font-size:1.5rem}}
+/* LeadStream Systems section */
+.ls-sec{position:relative;color:#d6e8ea;background:linear-gradient(160deg,#0b2830 0%,#0f3b45 55%,#0b2a33 100%);overflow:hidden}
+.ls-sec::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at 85% 10%,rgba(94,224,208,.18),transparent 70%),radial-gradient(40% 40% at 5% 95%,rgba(255,122,89,.14),transparent 70%)}
+.ls-sec .wrap{position:relative;z-index:1}
+.ls-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.ls-wordmark{margin:0 0 .9rem;font-family:"Cormorant Garamond",Georgia,serif;font-size:2.1rem;font-weight:700;color:#fff;letter-spacing:.01em}
+.ls-wordmark span{color:#5ee0d0}
+.ls-wordmark em{font-family:Inter,system-ui,sans-serif;font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#ff9b80;margin-left:.5rem;vertical-align:middle}
+.ls-sec .eyebrow{color:#5ee0d0}
+.ls-sec h2{color:#fff}
+.ls-sec p{color:#d6e8ea}
+.btn-ls{background:#ff7a59;color:#1a0f0b;border-color:#ff7a59;font-weight:700}
+.btn-ls:hover{background:#ff9378;border-color:#ff9378}
+.ls-art{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:1.2rem;min-height:360px}
+.ls-art figure{margin:0;text-align:center}
+.ls-art img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.45);border:3px solid rgba(255,255,255,.9)}
+.ls-art figcaption{margin-top:.6rem;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#9fe8de;font-weight:600}
+.ls-phone{width:42%;transform:rotate(-3deg)}
+.ls-sign{width:50%;transform:rotate(3deg);margin-bottom:2.2rem}
+.ls-steps{list-style:none;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;counter-reset:ls}
+.ls-steps li{counter-increment:ls;position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(94,224,208,.35);border-radius:14px;padding:1rem 1rem 1.1rem}
+.ls-steps li::before{content:counter(ls);display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:50%;background:#5ee0d0;color:#06262c;font-weight:700;font-size:.85rem;margin-bottom:.5rem}
+.ls-steps b{display:block;color:#fff;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.35rem}
+.ls-steps span{display:block;font-size:.88rem;color:#bcd8db;line-height:1.4;margin-top:.15rem}
+.ls-feats{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.ls-feats li{background:rgba(7,28,34,.55);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1.3rem 1.3rem 1.4rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.ls-feats h3{margin:0 0 .4rem;color:#fff;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.3rem}
+.ls-feats p{margin:0;font-size:.95rem;line-height:1.5;color:#c4dcde}
+@media(max-width:900px){.ls-grid{grid-template-columns:1fr;gap:2rem}.ls-steps{grid-template-columns:1fr 1fr}.ls-feats{grid-template-columns:1fr}.ls-art{min-height:0}}
+@media(max-width:520px){.ls-steps{grid-template-columns:1fr}.ls-wordmark{font-size:1.8rem}}
