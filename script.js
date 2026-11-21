@@ -48,7 +48,7 @@ var CONTACT_EMAIL = "broker@myflroffice.com";
         body: JSON.stringify({
           source: form.getAttribute("data-source") || "joinflr.com",
           name: d.name, email: d.email, phone: d.phone,
-          type: d.type, brokerage: d.brokerage, message: d.message
+          type: d.type, brokerage: d.brokerage, stage: d.stage, school: d.school, message: d.message
         })
       }).then(function (r) {
         if (!r.ok) { throw new Error("bad status"); }
@@ -66,6 +66,8 @@ var CONTACT_EMAIL = "broker@myflroffice.com";
       "Phone: " + (d.phone || ""),
       "I am: " + d.type,
       "Current brokerage: " + (d.brokerage || ""),
+      d.stage ? "Licensing status: " + d.stage : "",
+      d.school ? "Licensing school: " + d.school : "",
       "",
       d.message || ""
     ].join("\n");

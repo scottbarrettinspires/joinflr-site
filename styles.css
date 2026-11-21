@@ -628,3 +628,4 @@ overflow:hidden;isolation:isolate}
 .oe-list li::before{content:"\2713";position:absolute;left:0;top:0;width:1.2rem;height:1.2rem;border-radius:50%;background:#e3f4f2;color:#036F72;font-size:.75rem;font-weight:700;display:grid;place-items:center;margin-top:.15rem}
 .oe-list b{color:#036F72}
 @media(max-width:900px){.oe{grid-template-columns:1fr;gap:1.4rem;padding:1.1rem}}
+.audience-band .audience-inner:first-child:not(:last-child){padding-bottom:.15rem}.audience-inner+.audience-inner{padding-top:.15rem}
