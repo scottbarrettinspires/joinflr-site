@@ -395,3 +395,7 @@ overflow:hidden;isolation:isolate}
 .btn-white:hover{background:#eaf7f7}
 @media(max-width:900px){.lift-grid{grid-template-columns:1fr 1fr}.lift-card,.lift-card:nth-child(n+4){grid-column:span 1}}
 @media(max-width:600px){.lift-grid{grid-template-columns:1fr}}
+.lift-head{display:grid;grid-template-columns:1fr 1.05fr;gap:2.6rem;align-items:center}
+.lift-photo{margin:0}
+.lift-photo img{display:block;width:100%;height:auto;border-radius:20px;border:4px solid rgba(255,255,255,.9);box-shadow:0 22px 50px rgba(0,0,0,.4);transform:rotate(1.2deg)}
+@media(max-width:900px){.lift-head{grid-template-columns:1fr;gap:1.6rem}.lift-photo img{transform:none}}
