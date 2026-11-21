@@ -295,7 +295,7 @@ overflow:hidden;isolation:isolate}
 @media(max-width:900px){.weeks{grid-template-columns:repeat(4,1fr);row-gap:1.4rem}.wk:nth-child(5)::before{display:none}.mentor-cols{grid-template-columns:1fr}}
 
 /* Scott headshot on the pledge card: breaks out above the card */
-.svc-pledge{position:relative;margin-top:8rem;align-items:center}
+.svc-pledge{position:relative;margin-top:2.5rem;align-items:center}
 .pledge-who{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 0 auto;width:280px;margin-top:-9rem;align-self:flex-end}
 .pledge-who img{width:240px;height:auto;display:block;margin:0 auto .4rem;filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
 .pledge-who span{display:block}
