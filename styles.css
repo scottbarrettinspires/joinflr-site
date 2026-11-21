@@ -334,3 +334,7 @@ overflow:hidden;isolation:isolate}
 @media(max-width:900px){.ls-grid{grid-template-columns:1fr;gap:2rem}.ls-steps{grid-template-columns:1fr 1fr}.ls-feats{grid-template-columns:1fr}.ls-art{min-height:0}}
 @media(max-width:520px){.ls-steps{grid-template-columns:1fr}.ls-wordmark{font-size:1.8rem}}
 .ls-phone img{object-fit:cover;max-height:520px;object-position:top}
+/* LeadStream background photo */
+.ls-sec{isolation:isolate}
+.ls-sec::before{content:"";position:absolute;left:0;right:0;top:0;height:68%;z-index:-1;background:linear-gradient(90deg,rgba(9,34,41,.95) 0%,rgba(9,34,41,.86) 50%,rgba(9,34,41,.45) 100%),url("assets/ls-bg.jpg?v=1") center 35%/cover no-repeat;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
+@media(max-width:900px){.ls-sec::before{height:55%;background:linear-gradient(180deg,rgba(9,34,41,.85) 0%,rgba(9,34,41,.75) 100%),url("assets/ls-bg.jpg?v=1") center/cover no-repeat}}
