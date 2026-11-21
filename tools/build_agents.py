@@ -70,7 +70,7 @@ def build(a):
       <div class="ai-text">
         <p class="eyebrow dark">A personal introduction</p>
         <h2>{esc(name)} invites you to take a look at FLR</h2>
-        <p class="ai-role">{esc(a.get("role") or "Florida Luxury Realty agent")}, Florida Luxury Realty</p>
+        <p class="ai-role">{esc(a["role"] + ", Florida Luxury Realty") if a.get("role") else "Florida Luxury Realty agent"}</p>
         <p>{esc(note)}</p>
         <div class="ai-actions">{btns}</div>
       </div>
