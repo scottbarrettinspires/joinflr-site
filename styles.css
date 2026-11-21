@@ -348,3 +348,7 @@ overflow:hidden;isolation:isolate}
 .ls-art .phone-frame img{width:100%;height:auto;max-height:none;object-fit:initial;border:0;border-radius:34px;box-shadow:none;display:block}
 .phone-notch{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:84px;height:22px;background:#0b0f12;border-radius:12px;z-index:2}
 @media(max-width:520px){.phone-frame{width:260px}}
+/* Training section: room photo as background */
+.grow-sec{position:relative;isolation:isolate;background:#f4f8f8}
+.grow-sec::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(244,248,248,.9) 0%,rgba(244,248,248,.8) 55%,rgba(244,248,248,.93) 100%),url("assets/training-room.jpg?v=3") center/cover no-repeat}
+.grow-sec .col{background:rgba(255,255,255,.94);box-shadow:0 6px 22px rgba(14,34,56,.1);border-radius:var(--radius);padding:1.1rem 1.3rem 1.3rem}
