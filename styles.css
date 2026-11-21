@@ -462,3 +462,11 @@ overflow:hidden;isolation:isolate}
 .rs-photo{margin:0}
 .rs-photo img{display:block;width:100%;height:auto;border-radius:20px;box-shadow:0 20px 44px rgba(14,34,56,.18)}
 @media(max-width:900px){.rs-top-grid{grid-template-columns:1fr;gap:1.6rem}}
+
+/* new-agents Why: photo behind the headline only, tiles on solid dark */
+#why.why-long{display:block}
+#why.why-long::before{bottom:auto;top:0;height:520px;width:58%;aspect-ratio:auto;-webkit-mask-image:linear-gradient(270deg,transparent 0%,#000 48%),linear-gradient(0deg,transparent 0%,#000 30%);-webkit-mask-composite:source-in;mask-image:linear-gradient(270deg,transparent 0%,#000 48%),linear-gradient(0deg,transparent 0%,#000 30%);mask-composite:intersect}
+#why.why-long .why-head{display:flex;align-items:center;min-height:400px}
+#why.why-long .why-text{max-width:620px;margin-left:auto}
+#why.why-long .proof{margin-top:2.2rem}
+@media(max-width:900px){#why.why-long::before{height:auto;bottom:0;width:auto}#why.why-long .why-head{min-height:0;display:block}}
