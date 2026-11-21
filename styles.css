@@ -484,3 +484,5 @@ overflow:hidden;isolation:isolate}
 
 .cols.cols-2{grid-template-columns:repeat(2,1fr)}
 @media(max-width:900px){.cols.cols-2{grid-template-columns:1fr}}
+
+.ls-feats .lf-ic{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#5ee0d0;color:#0b2830;margin-bottom:.9rem}
