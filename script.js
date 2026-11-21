@@ -21,6 +21,24 @@ var CONTACT_EMAIL = "broker@myflroffice.com";
     }
   });
 
+  // Remember which FLR agent's page a visitor came from (first and most recent), for sponsor tracking.
+  function attribution() {
+    var out = { first: null, last: null };
+    try {
+      var ref = window.FLR_REF, now = new Date().toISOString(), DAYS = 90 * 864e5;
+      var first = JSON.parse(localStorage.getItem("flr_ref_first") || "null");
+      var last = JSON.parse(localStorage.getItem("flr_ref_last") || "null");
+      if (first && Date.now() - Date.parse(first.ts) > DAYS) { first = null; }
+      if (ref && ref.slug) {
+        if (!first) { first = { slug: ref.slug, name: ref.name, ts: now }; localStorage.setItem("flr_ref_first", JSON.stringify(first)); }
+        last = { slug: ref.slug, name: ref.name, ts: now }; localStorage.setItem("flr_ref_last", JSON.stringify(last));
+      }
+      out.first = first; out.last = last;
+    } catch (err) {}
+    return out;
+  }
+  attribution();
+
   var form = document.getElementById("lead-form");
   var status = document.getElementById("form-status");
 
@@ -40,23 +58,27 @@ var CONTACT_EMAIL = "broker@myflroffice.com";
       return;
     }
 
+    var meta = attribution();
+    var payload = {
+      source: form.getAttribute("data-source") || "joinflr.com",
+      submitted_at: new Date().toISOString(), page_url: location.href,
+      name: d.name, email: d.email, phone: d.phone,
+      type: d.type || "", brokerage: d.brokerage || "", stage: d.stage || "", school: d.school || "", message: d.message || "",
+      sponsor: d.sponsor || "", sponsor_slug: d.sponsor_slug || "",
+      first_touch: meta.first ? meta.first.slug : "", first_touch_name: meta.first ? meta.first.name : "", first_touch_at: meta.first ? meta.first.ts : "",
+      last_touch: meta.last ? meta.last.slug : "", last_touch_name: meta.last ? meta.last.name : ""
+    };
+
     if (FORM_ENDPOINT) {
       say("Sending...");
-      fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source: form.getAttribute("data-source") || "joinflr.com",
-          name: d.name, email: d.email, phone: d.phone,
-          type: d.type, brokerage: d.brokerage, stage: d.stage, school: d.school, message: d.message
-        })
-      }).then(function (r) {
-        if (!r.ok) { throw new Error("bad status"); }
-        form.reset();
-        say("Thank you. Scott will be in touch personally.", "ok");
-      }).catch(function () {
-        say("Something went wrong. Please email " + CONTACT_EMAIL + ".", "err");
-      });
+      // Simple form-encoded POST (no custom headers) so a Zapier catch hook accepts it from the browser.
+      fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", body: new URLSearchParams(payload) })
+        .then(function () {
+          form.reset();
+          say("Thank you. Scott will be in touch personally.", "ok");
+        }).catch(function () {
+          say("Something went wrong. Please email " + CONTACT_EMAIL + ".", "err");
+        });
       return;
     }
 
@@ -68,6 +90,7 @@ var CONTACT_EMAIL = "broker@myflroffice.com";
       "Current brokerage: " + (d.brokerage || ""),
       d.stage ? "Licensing status: " + d.stage : "",
       d.school ? "Licensing school: " + d.school : "",
+      payload.sponsor ? "Introduced by (FLR agent): " + payload.sponsor : (payload.first_touch_name ? "Earlier introduced by: " + payload.first_touch_name : ""),
       "",
       d.message || ""
     ].join("\n");

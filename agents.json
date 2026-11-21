@@ -1,0 +1,14 @@
+{
+  "_help": "One entry per active FLR agent. Required: slug (lowercase-with-dashes, becomes joinflr.com/agents/<slug>/), name, role. Optional: phone, email, photo (file in assets/agents/), note (the agent's own words, 1-3 sentences). Then run: python3 tools/build_agents.py",
+  "agents": [
+    {
+      "slug": "scott-barrett",
+      "name": "Scott Barrett",
+      "role": "Managing Broker",
+      "phone": "727-243-3664",
+      "email": "broker@myflroffice.com",
+      "photo": "",
+      "note": ""
+    }
+  ]
+}
