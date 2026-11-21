@@ -495,7 +495,8 @@ overflow:hidden;isolation:isolate}
 @media(max-width:900px){.sbi-card{grid-template-columns:1fr;gap:1.4rem;padding:1.6rem 1.4rem}.sbi-logo{max-width:420px;margin:0 auto}}
 
 /* Managing broker section (merged) */
-.mb-sec{background:var(--sand)}
+.mb-sec{background:#fff}
+.rs-sec{background:var(--sand)}
 .mb-top{display:grid;grid-template-columns:1.3fr .7fr;gap:3rem;align-items:start}
 .mb-text .mb-story{max-width:none;margin-bottom:1.6rem}
 .mb-text .story-facts{max-width:none;margin:0;grid-template-columns:repeat(2,1fr)}
