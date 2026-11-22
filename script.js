@@ -1,7 +1,7 @@
 // ---- Site settings: edit these two values, nothing else needs to change ----
 // FORM_ENDPOINT: URL that accepts a JSON POST (Jotform, Zapier catch hook, etc.).
 // Leave empty to fall back to opening the visitor's email app addressed to CONTACT_EMAIL.
-var FORM_ENDPOINT = "";
+var FORM_ENDPOINT = "/submit.php";
 var CONTACT_EMAIL = "broker@myflroffice.com";
 // ----------------------------------------------------------------------------
 
@@ -69,35 +69,49 @@ var CONTACT_EMAIL = "broker@myflroffice.com";
       last_touch: meta.last ? meta.last.slug : "", last_touch_name: meta.last ? meta.last.name : ""
     };
 
+    function mailtoFallback() {
+      var body = [
+        "Name: " + d.name,
+        "Email: " + d.email,
+        "Phone: " + (d.phone || ""),
+        "I am: " + d.type,
+        "Current brokerage: " + (d.brokerage || ""),
+        d.stage ? "Licensing status: " + d.stage : "",
+        d.school ? "Licensing school: " + d.school : "",
+        payload.sponsor ? "Introduced by (FLR agent): " + payload.sponsor : (payload.first_touch_name ? "Earlier introduced by: " + payload.first_touch_name : ""),
+        "",
+        d.message || ""
+      ].join("\n");
+      window.location.href = "mailto:" + CONTACT_EMAIL +
+        "?subject=" + encodeURIComponent(form.getAttribute("data-subject") || "Interested in joining FLR") +
+        "&body=" + encodeURIComponent(body);
+      say("Your email app should open with your details ready to send.", "ok");
+    }
+
+    function done() {
+      var box = document.createElement("div");
+      box.className = "form-done"; box.setAttribute("role", "status");
+      box.innerHTML = '<span class="form-done-ic" aria-hidden="true">&#10003;</span><h3>Your request has been submitted</h3><p>Scott will reach out to you soon and looks forward to speaking with you.</p>';
+      form.replaceWith(box);
+      box.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
     if (FORM_ENDPOINT) {
       say("Sending...");
-      // Simple form-encoded POST (no custom headers) so a Zapier catch hook accepts it from the browser.
-      fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", body: new URLSearchParams(payload) })
-        .then(function () {
-          form.reset();
-          say("Thank you. Scott will be in touch personally.", "ok");
-        }).catch(function () {
-          say("Something went wrong. Please email " + CONTACT_EMAIL + ".", "err");
+      var sbtn = form.querySelector("button[type=submit]"); if (sbtn) { sbtn.disabled = true; }
+      fetch(FORM_ENDPOINT, { method: "POST", body: new URLSearchParams(payload) })
+        .then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(function (j) { if (!j.ok) { throw new Error("not ok"); } done(); })
+        .catch(function () {
+          // Server unavailable: fall back to the visitor's email app so the request is never lost.
+          if (sbtn) { sbtn.disabled = false; }
+          say("", "");
+          mailtoFallback();
         });
       return;
     }
 
-    var body = [
-      "Name: " + d.name,
-      "Email: " + d.email,
-      "Phone: " + (d.phone || ""),
-      "I am: " + d.type,
-      "Current brokerage: " + (d.brokerage || ""),
-      d.stage ? "Licensing status: " + d.stage : "",
-      d.school ? "Licensing school: " + d.school : "",
-      payload.sponsor ? "Introduced by (FLR agent): " + payload.sponsor : (payload.first_touch_name ? "Earlier introduced by: " + payload.first_touch_name : ""),
-      "",
-      d.message || ""
-    ].join("\n");
-    window.location.href = "mailto:" + CONTACT_EMAIL +
-      "?subject=" + encodeURIComponent(form.getAttribute("data-subject") || "Interested in joining FLR") +
-      "&body=" + encodeURIComponent(body);
-    say("Your email app should open with your details ready to send.", "ok");
+    mailtoFallback();
   });
 })();
 
