@@ -76,8 +76,8 @@ def build(a):
         <p class="ai-help-h">How it could help your business flourish</p>
         <ul class="ai-help">
           <li><a class="aih aih-hynri" href="#hynri"><span class="aih-logo"><img src="../../assets/hynri-logo.png" alt="Hynri" width="731" height="215" loading="lazy"></span><b>My Own AI Agent Partner</b></a></li>
-          <li><a class="aih aih-ls" href="#leadstream"><span class="aih-logo"><img src="../../assets/leadstream-logo.png" alt="LeadStream Systems" width="900" height="185" loading="lazy"></span><b>LeadStream Generates and Nurtures Leads For Me</b></a></li>
-          <li><a class="aih aih-sbi" href="#grow"><span class="aih-logo"><img src="../../assets/sbi-logo-light.png" alt="ScottBarrettInspires" width="900" height="266" loading="lazy"></span><b>ScottBarrettInspires Personal Coaching For Peak Success</b></a></li>
+          <li><a class="aih aih-ls" href="#leadstream"><span class="aih-logo"><img src="../../assets/leadstream-logo.png" alt="LeadStream Systems" width="900" height="185" loading="lazy"></span><b>Generates and Nurtures Leads For Me</b></a></li>
+          <li><a class="aih aih-sbi" href="#grow"><span class="aih-logo"><img src="../../assets/sbi-logo-light.png" alt="ScottBarrettInspires" width="900" height="266" loading="lazy"></span><b>Personal Coaching For Peak Success</b></a></li>
         </ul>
         {('<div class="ai-actions">' + btns + '</div>') if btns else ''}
       </div>
