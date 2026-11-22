@@ -55,14 +55,14 @@ def build(a):
     initials = "".join(w[0] for w in name.split()[:2]).upper()
     photo = a.get("photo") or ""
     if photo and os.path.exists(f"assets/agents/{photo}"):
-        pic = f'<img class="ai-photo" src="../../assets/agents/{esc(photo)}" alt="{esc(name)}" width="260" height="260" loading="lazy">'
+        pic = f'<img class="ai-photo" src="../../assets/agents/{esc(photo)}" alt="{esc(name)}" width="500" height="500" loading="lazy">'
     else:
         pic = f'<span class="ai-photo ai-initials" aria-hidden="true">{esc(initials)}</span>'
     note = a.get("note") or ("Florida Luxury Realty is where I build my business, and I would like to show you how it could help yours flourish. "
                              "Take a look at what FLR offers below. If it sounds worth a conversation, request information and we will get you the full picture.")
     btns = '<a class="btn btn-teal" href="#contact">Request information</a>'
     if a.get("phone"):
-        tel = re.sub(r"\D", "", a["phone"]); btns += f' <a class="btn btn-ghost-dark" href="tel:+1{tel[-10:]}">Call {esc(first)}</a>'
+        tel = re.sub(r"\D", "", a["phone"]); btns += f' <a class="btn btn-ghost" href="tel:+1{tel[-10:]}">Call {esc(first)}</a>'
     role = esc(a["role"] + ", Florida Luxury Realty") if a.get("role") else "Florida Luxury Realty agent"
     intro = f'''<section class="ai-sec" id="intro">
   <div class="wrap">
