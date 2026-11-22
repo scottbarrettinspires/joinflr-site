@@ -74,7 +74,7 @@ def build(a):
         <h2 class="ai-name">{esc(name)}</h2>
         {role_html}
         <p>{esc(note)}</p>
-        <p class="ai-help-h">Here is how FLR has helped my business flourish</p>
+        <p class="ai-help-h">Here are the TOP 3 benefits I have today that changed my business success</p>
         <ul class="ai-help">
           <li><a class="aih aih-hynri" href="#hynri"><span class="aih-logo"><img src="../../assets/hynri-logo.png" alt="Hynri" width="731" height="215" loading="lazy"></span><b>My Own AI Agent Partner</b></a></li>
           <li><a class="aih aih-ls" href="#leadstream"><span class="aih-logo"><img src="../../assets/leadstream-logo.png" alt="LeadStream Systems" width="900" height="185" loading="lazy"></span><b>Generates and Nurtures Leads For Me</b></a></li>
