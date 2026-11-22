@@ -63,7 +63,8 @@ def build(a):
     btns = '<a class="btn btn-teal" href="#contact">Request information</a>'
     if a.get("phone"):
         tel = re.sub(r"\D", "", a["phone"]); btns += f' <a class="btn btn-ghost" href="tel:+1{tel[-10:]}">Call {esc(first)}</a>'
-    role = esc(a["role"] + ", Florida Luxury Realty") if a.get("role") else "Florida Luxury Realty agent"
+    role = esc(a["role"]) if a.get("role") else ""
+    role_html = f'<p class="ai-role">{role}</p>' if role else ""
     intro = f'''<section class="ai-sec" id="intro">
   <div class="wrap">
     <div class="ai-card reveal">
@@ -71,8 +72,7 @@ def build(a):
       <div class="ai-text">
         <p class="eyebrow dark">A personal introduction from</p>
         <h2 class="ai-name">{esc(name)}</h2>
-        <p class="ai-role">{role}</p>
-        <h3>Why my brokerage is Florida Luxury Realty</h3>
+        {role_html}
         <p>{esc(note)}</p>
         <p class="ai-help-h">How it could help your business flourish</p>
         <ul class="ai-help">
