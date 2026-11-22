@@ -70,7 +70,6 @@ def build(a):
     <div class="ai-card reveal">
       {pic}
       <div class="ai-text">
-        <p class="eyebrow dark">A personal introduction from</p>
         <h2 class="ai-name">{esc(name)}</h2>
         {role_html}
         <p>{esc(note)}</p>
