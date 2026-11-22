@@ -58,9 +58,9 @@ def build(a):
         pic = f'<img class="ai-photo" src="../../assets/agents/{esc(photo)}" alt="{esc(name)}" width="500" height="500" loading="lazy">'
     else:
         pic = f'<span class="ai-photo ai-initials" aria-hidden="true">{esc(initials)}</span>'
-    note = a.get("note") or ("It's when I choose to grow and partnered my business with Florida Luxury Realty that everything happened for me. "
-                             "I want to share the same opportunity you could have for yourself. "
-                             "I highly encourage you to take a few minutes for yourself to learn how Florida Luxury Realty would help your personal real estate business grow.")
+    note = a.get("note") or ("I'm more successful today because I made one decision: I partnered my business with Florida Luxury Realty. "
+                             "I wish I'd done it sooner. If you're ready to take your business to the next level, "
+                             "I want you to know what you could have for yourself as well.")
     btns = ""
     if a.get("phone"):
         tel = re.sub(r"\D", "", a["phone"]); btns += f'<a class="btn btn-ghost" href="tel:+1{tel[-10:]}">Call {esc(first)}</a>'
