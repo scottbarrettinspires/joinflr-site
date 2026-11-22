@@ -60,7 +60,7 @@ def build(a):
         pic = f'<span class="ai-photo ai-initials" aria-hidden="true">{esc(initials)}</span>'
     note = a.get("note") or ("It's when I choose to grow and partnered my business with Florida Luxury Realty that everything happened for me. "
                              "I want to share the same opportunity you could have for yourself. "
-                             "I hope that you will take a few minutes for yourself to learn how Florida Luxury Realty would help your personal real estate business grow.")
+                             "I highly encourage you to take a few minutes for yourself to learn how Florida Luxury Realty would help your personal real estate business grow.")
     btns = ""
     if a.get("phone"):
         tel = re.sub(r"\D", "", a["phone"]); btns += f'<a class="btn btn-ghost" href="tel:+1{tel[-10:]}">Call {esc(first)}</a>'
