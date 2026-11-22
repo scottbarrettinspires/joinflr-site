@@ -60,9 +60,9 @@ def build(a):
         pic = f'<span class="ai-photo ai-initials" aria-hidden="true">{esc(initials)}</span>'
     note = a.get("note") or ("Florida Luxury Realty is where I build my business, and I would like to show you how it could help yours flourish. "
                              "Take a look at what FLR offers below. If it sounds worth a conversation, request information and we will get you the full picture.")
-    btns = '<a class="btn btn-teal" href="#contact">Request information</a>'
+    btns = ""
     if a.get("phone"):
-        tel = re.sub(r"\D", "", a["phone"]); btns += f' <a class="btn btn-ghost" href="tel:+1{tel[-10:]}">Call {esc(first)}</a>'
+        tel = re.sub(r"\D", "", a["phone"]); btns += f'<a class="btn btn-ghost" href="tel:+1{tel[-10:]}">Call {esc(first)}</a>'
     role = esc(a["role"]) if a.get("role") else ""
     role_html = f'<p class="ai-role">{role}</p>' if role else ""
     intro = f'''<section class="ai-sec" id="intro">
@@ -79,7 +79,7 @@ def build(a):
           <li><a href="#grow"><b>Weekly training</b><span>in person and online</span></a></li>
           <li><a href="#share"><b>Revenue share</b><span>income beyond your own sales</span></a></li>
         </ul>
-        <div class="ai-actions">{btns}</div>
+        {('<div class="ai-actions">' + btns + '</div>') if btns else ''}
       </div>
     </div>
   </div>
