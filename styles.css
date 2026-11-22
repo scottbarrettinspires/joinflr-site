@@ -702,3 +702,7 @@ overflow:hidden;isolation:isolate}
 .ai-help a.aih-ls:hover{border-color:#ff9f43}
 .ai-help a.aih-sbi{border-color:rgba(196,154,60,.55);border-left-color:#c49a3c}
 .ai-help a.aih-sbi:hover{border-color:#c49a3c}
+.ai-help a.aih-ls{background:linear-gradient(160deg,#0f3446,#0a2230)}
+.ai-help a.aih-ls:hover{background:linear-gradient(160deg,#133f54,#0d2a3b)}
+.ai-help a.aih-sbi{background:linear-gradient(160deg,#1a2a62,#0f1a45)}
+.ai-help a.aih-sbi:hover{background:linear-gradient(160deg,#20337a,#13205a)}
