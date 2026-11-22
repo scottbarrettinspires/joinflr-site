@@ -75,9 +75,9 @@ def build(a):
         <p>{esc(note)}</p>
         <p class="ai-help-h">How it could help your business flourish</p>
         <ul class="ai-help">
-          <li><a href="#hynri"><b>An AI Agent Partner</b><span>handles the busywork</span></a></li>
-          <li><a href="#grow"><b>Weekly training</b><span>in person and online</span></a></li>
-          <li><a href="#share"><b>Revenue share</b><span>income beyond your own sales</span></a></li>
+          <li><a class="aih aih-hynri" href="#hynri"><span class="aih-logo"><img src="../../assets/hynri-logo.png" alt="Hynri" width="731" height="215" loading="lazy"></span><b>My Own AI Agent Partner</b></a></li>
+          <li><a class="aih aih-ls" href="#leadstream"><span class="aih-logo aih-chip"><img src="../../assets/leadstream-logo.png" alt="LeadStream Systems" width="900" height="185" loading="lazy"></span><b>Generate and Nurture Leads</b></a></li>
+          <li><a class="aih aih-sbi" href="#grow"><span class="aih-logo aih-chip"><img src="../../assets/sbi-logo.png" alt="ScottBarrettInspires" width="900" height="266" loading="lazy"></span><b>Training with ScottBarrettInspires</b></a></li>
         </ul>
         {('<div class="ai-actions">' + btns + '</div>') if btns else ''}
       </div>

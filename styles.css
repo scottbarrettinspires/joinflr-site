@@ -689,3 +689,16 @@ overflow:hidden;isolation:isolate}
 .ai-text .ai-name{color:#fff}
 .ai-photo{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 16%,#000 60%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%);mask-image:linear-gradient(to right,transparent 0,#000 16%,#000 60%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%);-webkit-mask-composite:source-in;mask-composite:intersect}
 @media(max-width:900px){.ai-photo{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 18%,#000 82%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 10%,#000 62%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 18%,#000 82%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 10%,#000 62%,transparent 100%);-webkit-mask-composite:source-in;mask-composite:intersect}}
+
+/* agent intro: branded help tiles */
+.ai-help a.aih{display:flex;flex-direction:column;gap:.7rem;padding:.9rem 1rem 1rem;border-left-width:4px}
+.aih-logo{display:flex;align-items:center;justify-content:center;height:64px}
+.aih-logo img{max-height:100%;width:auto;max-width:100%;object-fit:contain}
+.aih-chip{background:#fff;border-radius:8px;padding:.35rem .6rem}
+.ai-help a.aih b{font-size:1.02rem;line-height:1.25;text-align:center}
+.ai-help a.aih-hynri{background:linear-gradient(160deg,#16406A,#0e2a47);border-color:rgba(77,179,238,.5);border-left-color:#4DB3EE}
+.ai-help a.aih-hynri:hover{border-color:#4DB3EE;background:linear-gradient(160deg,#1c4d7e,#12335a)}
+.ai-help a.aih-ls{border-color:rgba(255,159,67,.5);border-left-color:#ff9f43}
+.ai-help a.aih-ls:hover{border-color:#ff9f43}
+.ai-help a.aih-sbi{border-color:rgba(196,154,60,.55);border-left-color:#c49a3c}
+.ai-help a.aih-sbi:hover{border-color:#c49a3c}
