@@ -87,6 +87,14 @@ def build(a):
 
 '''
     h = swap(h, '<section class="hero">', intro + '<section class="hero">')
+    # move hero + "Production solves everything" band to sit just above the "Empowering agents" section
+    hs = h.index('<section class="hero">')
+    ws = h.index('<section class="section why-sec" id="why">')
+    we = h.index('</section>', ws) + len('</section>')
+    block = h[hs:we]
+    h = h[:hs] + h[we:].lstrip("\n")
+    ms = h.index('<section class="section mb-sec" id="service">')
+    h = h[:ms] + block + "\n\n" + h[ms:]
     # ---- revenue share call to action (not a referral prompt for an outside agent) ----
     s, e = region(h, '<div class="rs-cta reveal">', 'Refer an agent</a>\n    </div>')
     h = h[:s] + f'''<div class="rs-cta reveal">
